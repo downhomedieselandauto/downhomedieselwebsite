@@ -2,19 +2,9 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta
-		name="viewport"
-		content="width=device-width, initial-scale=1.0">
-
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Down Home Diesel & Auto</title>
-
 	<style>
-
-
-		/* =========================================================
-		BASIC PAGE SETTINGS
-		========================================================= */
-
 		* {
 			box-sizing: border-box;
 			margin: 0;
@@ -56,11 +46,9 @@
 			margin: 0 auto 20px auto;
 		}
 
-
 		.header-home-link {
 			display: inline-block;
 		}
-
 
 		/* =========================================================
 		NAVIGATION
@@ -73,7 +61,6 @@
 			gap: 5px;
 		}
 
-
 		nav button {
 			border: none;
 			background: #333;
@@ -84,12 +71,10 @@
 			transition: background 0.2s;
 		}
 
-
 		nav button:hover,
 		nav button.active {
 			background: #c40000;
 		}
-
 
 		/* =========================================================
 		PAGE CONTENT
@@ -101,15 +86,12 @@
 			margin: 35px auto;
 			padding: 45px 25px;
 			background: rgba(255, 255, 255, 0.94);
-			box-shadow:
-				0 3px 15px rgba(0, 0, 0, 0.2);
+			box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
 		}
-
 
 		.page.active {
 			display: block;
 		}
-
 
 		.page h2 {
 			font-size: 32px;
@@ -118,12 +100,10 @@
 			padding-bottom: 8px;
 		}
 
-
 		.page h3 {
 			margin-top: 25px;
 			margin-bottom: 10px;
 		}
-
 
 		/* =========================================================
 		HOME PAGE
@@ -146,32 +126,11 @@
 
 		.contact-box a {
 			color: #c40000;
-
 			font-weight: bold;
 		}
 
 		/* =========================================================
 		REUSABLE ALBUM SYSTEM
-		========================================================= */
-
-		/*
-		The same album system is used for:
-		- Gallery
-		- For Sale
-		Each album contains:
-		1. A large main picture
-		2. Small thumbnail previews underneath
-		3. Title
-		4. Description/text
-		5. Optional sale information
-		The additional pictures are NOT displayed full-size
-		on the page.
-		They only appear as small thumbnails underneath
-		the main picture.
-		*/
-
-		/* =========================================================
-		ALBUM LIST
 		========================================================= */
 
 		.album-list {
@@ -181,10 +140,6 @@
 			margin-top: 25px;
 		}
 
-		/* =========================================================
-		ALBUM CARD
-		========================================================= */
-
 		.album {
 			display: flex;
 			gap: 25px;
@@ -193,18 +148,10 @@
 			border: 1px solid #ddd;
 		}
 
-		/* =========================================================
-		PHOTO AREA
-		========================================================= */
-
 		.album-photo-area {
 			width: 400px;
 			flex-shrink: 0;
 		}
-
-		/* =========================================================
-		MAIN ALBUM PICTURE
-		========================================================= */
 
 		.album-main-photo {
 			width: 100%;
@@ -225,10 +172,6 @@
 		.album-main-photo:hover img {
 			transform: scale(1.03);
 		}
-
-		/* =========================================================
-		THUMBNAIL PREVIEWS
-		========================================================= */
 
 		.album-thumbnails {
 			display: flex;
@@ -259,17 +202,9 @@
 			border-color: #c40000;
 		}
 
-
-		/* Currently selected thumbnail */
-
 		.album-thumbnail.active {
 			border: 3px solid #c40000;
 		}
-
-
-		/* =========================================================
-		ALBUM INFORMATION
-		========================================================= */
 
 		.album-info {
 			flex: 1;
@@ -277,7 +212,6 @@
 
 		.album-info h3 {
 			margin-top: 0;
-
 			font-size: 25px;
 		}
 
@@ -285,26 +219,9 @@
 			margin: 10px 0;
 		}
 
-		/* =========================================================
-		FOR SALE PRICE
-		========================================================= */
-
 		.sale-price {
 			font-size: 20px;
 			font-weight: bold;
-		}
-
-		/* =========================================================
-		HIDDEN ALBUM PHOTO DATA
-		IMPORTANT:
-		The additional full-size images are kept in the HTML
-		so JavaScript can use them.
-		They are NOT displayed as full-size images.
-		Only their thumbnails are created by JavaScript.
-		========================================================= */
-		
-		.album-photos {
-			display: none;
 		}
 
 		/* =========================================================
@@ -328,10 +245,6 @@
 			display: flex;
 		}
 
-		/* =========================================================
-		VIEWER CONTENT
-		========================================================= */
-
 		.photo-viewer-content {
 			position: relative;
 			width: 90%;
@@ -341,11 +254,6 @@
 			justify-content: center;
 			overflow: hidden;
 		}
-
-
-		/* =========================================================
-		VIEWER IMAGE
-		========================================================= */
 
 		#viewer-image {
 			max-width: 85%;
@@ -479,6 +387,7 @@
 		========================================================= */
 
 		@media (max-width: 700px) {
+
 			.header-image {
 				max-width: 95%;
 				max-height: 130px;
@@ -548,6 +457,7 @@
 				font-size: 14px;
 			}
 		}
+
 	</style>
 </head>
 
@@ -558,10 +468,6 @@
 	========================================================= -->
 
 	<header>
-
-		<!--
-		Clicking the header image always returns to Home.
-		-->
 
 		<a
 			href="#"
@@ -575,11 +481,8 @@
 
 		</a>
 
-		<!-- =====================================================
-		NAVIGATION
-		===================================================== -->
+		<nav id="main-navigation">
 
-		<nav>
 			<button
 				class="nav-button active"
 				onclick="showPage('home', this)">
@@ -587,18 +490,23 @@
 			</button>
 
 			<button
+				id="gallery-nav"
 				class="nav-button"
 				onclick="showPage('gallery', this)">
 				Gallery
 			</button>
 
 			<button
+				id="forsale-nav"
 				class="nav-button"
 				onclick="showPage('forsale', this)">
 				For Sale
 			</button>
+
 		</nav>
+
 	</header>
+
 
 	<!-- =========================================================
 	MAIN CONTENT
@@ -613,17 +521,24 @@
 		<section
 			id="home"
 			class="page active">
+
 			<h2>Welcome</h2>
+
 			<br>
+
 			<p>
 				Give us a call or stop by for more information
 				about our diesel and automotive services.
 			</p>
+
 			<div class="contact-box">
+
 				<h3>Contact Us</h3>
+
 				<p>
 					<strong>Owner: Michael Servoss</strong>
 				</p>
+
 				<p>
 					<strong>Address:</strong><br>
 
@@ -631,12 +546,15 @@
 
 					Lincolnton, NC 28092
 				</p>
+
 				<p>
 					<strong>Phone:</strong><br>
+
 					<a href="tel:7042403408">
 						704-240-3408
 					</a>
 				</p>
+
 				<p>
 					<strong>Email:</strong><br>
 
@@ -644,8 +562,11 @@
 						DownHomeDieselAutomotive@outlook.com
 					</a>
 				</p>
+
 			</div>
+
 		</section>
+
 
 		<!-- =====================================================
 		GALLERY PAGE
@@ -654,108 +575,21 @@
 		<section
 			id="gallery"
 			class="page">
+
 			<h2>Gallery</h2>
+
 			<p>
 				Check out pictures of our shop, vehicles,
 				equipment, and work.
 			</p>
+
 			<div
 				class="album-list"
 				id="gallery-container">
-
-				<!-- =================================================
-				HOW TO ADD A GALLERY ALBUM
-				Copy the entire .album below to create another album.
-				CHANGE:
-				1. The cover picture
-				2. The album title
-				3. The text/description
-				4. The pictures inside .album-photos
-				You can add as many pictures as you want.
-				The additional pictures will appear as SMALL
-				THUMBNAILS underneath the main picture.
-				They will NOT appear full-size beside the album.
-				Clicking the main picture or a thumbnail opens
-				the full-screen photo viewer.
-				================================================= -->
-
-				<!-- =========================
-				GALLERY ALBUM
-				========================== -->
-
-				<div class="album">
-
-					<!-- PHOTO AREA -->
-
-					<div class="album-photo-area">
-
-						<!-- MAIN / COVER PHOTO -->
-
-						<div
-							class="album-main-photo"
-							onclick="openAlbum(this.closest('.album'))">
-							<img
-								src="bear.jpg"
-								alt="Bear">
-						</div>
-
-						<!--
-						THUMBNAILS ARE CREATED AUTOMATICALLY
-						FROM THE PICTURES BELOW.
-						-->
-
-						<div class="album-thumbnails"></div>
-
-						<!--
-						=================================================
-						ALBUM PICTURES
-						ADD OR REMOVE PICTURES HERE.
-						Example:
-						<div class="album-photo">
-							<img
-								src="picture.jpg"
-								alt="Description">
-						</div>
-						=================================================
-						-->
-
-						<div class="album-photos">
-							<div class="album-photo">
-								<img
-									src="bear.jpg"
-									alt="Bear picture 1">
-							</div>
-							<div class="album-photo">
-								<img
-									src="bear.jpg"
-									alt="Bear picture 2">
-							</div>
-							<div class="album-photo">
-								<img
-									src="bear.jpg"
-									alt="Bear picture 3">
-							</div>
-						</div>
-					</div>
-
-					<!-- ALBUM TEXT -->
-
-					<div class="album-info">
-						<h3>
-							Picture Album 1
-						</h3>
-						<p>
-							We robbed this bear in an alleyway
-						</p>
-					</div>
-				</div>
-
-				<!-- =================================================
-				COPY THE ALBUM ABOVE TO ADD ANOTHER GALLERY ALBUM.
-				================================================= -->
-
 			</div>
+
 		</section>
+
 
 		<!-- =====================================================
 		FOR SALE PAGE
@@ -764,112 +598,23 @@
 		<section
 			id="forsale"
 			class="page">
+
 			<h2>For Sale</h2>
+
 			<p>
 				Vehicles, parts, equipment, and other items
 				currently available for sale will be listed here.
 			</p>
+
 			<div
 				class="album-list"
 				id="sale-container">
-
-				<!-- =================================================
-				HOW TO ADD A FOR-SALE LISTING
-				Copy the entire .album below.
-				CHANGE:
-				1. Main/cover picture
-				2. Item name
-				3. Description
-				4. Price
-				5. Contact information
-				6. Pictures inside .album-photos
-				You can add as many pictures as you want.
-				The additional pictures become SMALL thumbnails
-				underneath the main picture.
-				================================================= -->
-
-				<!-- =========================
-				FOR SALE ITEM
-				========================== -->
-
-				<div class="album">
-
-					<!-- PHOTO AREA -->
-
-					<div class="album-photo-area">
-
-						<!-- MAIN / COVER PHOTO -->
-
-						<div
-							class="album-main-photo"
-							onclick="openAlbum(this.closest('.album'))">
-							<img
-								src="aspen.jpg"
-								alt="Chrysler Aspen">
-						</div>
-
-						<!-- THUMBNAILS -->
-
-						<div class="album-thumbnails"></div>
-
-						<!--
-						=================================================
-						LISTING PICTURES
-						ADD AS MANY PICTURES AS YOU WANT.
-						=================================================
-						-->
-
-						<div class="album-photos">
-							<div class="album-photo">
-								<img
-									src="aspen.jpg"
-									alt="Chrysler Aspen front">
-							</div>
-							<div class="album-photo">
-								<img
-									src="aspen.jpg"
-									alt="Chrysler Aspen side">
-							</div>
-							<div class="album-photo">
-								<img
-									src="aspen.jpg"
-									alt="Chrysler Aspen rear">
-							</div>
-						</div>
-					</div>
-
-					<!-- LISTING INFORMATION -->
-
-					<div class="album-info">
-
-						<h3>
-							Chrysler Aspen
-						</h3>
-
-						<p>
-							This is a car.
-						</p>
-
-						<p class="sale-price">
-							$4,000
-						</p>
-						<p>
-							<strong>Contact: Mike</strong><br>
-
-							<a href="tel:7042403408">
-								704-240-3408
-							</a>
-						</p>
-					</div>
-				</div>
-
-				<!-- =================================================
-				COPY THE FOR-SALE ITEM ABOVE TO ADD ANOTHER LISTING.
-				================================================= -->
-
 			</div>
+
 		</section>
+
 	</main>
+
 
 	<!-- =========================================================
 	FULL-SCREEN PHOTO VIEWER
@@ -878,9 +623,8 @@
 	<div
 		id="photo-viewer"
 		class="photo-viewer">
-		<div class="photo-viewer-content">
 
-			<!-- CLOSE -->
+		<div class="photo-viewer-content">
 
 			<button
 				class="viewer-close"
@@ -889,15 +633,11 @@
 				&times;
 			</button>
 
-			<!-- PHOTO COUNTER -->
-
 			<div
 				id="viewer-counter"
 				class="viewer-counter">
 				1 / 1
 			</div>
-
-			<!-- PREVIOUS -->
 
 			<button
 				class="viewer-prev"
@@ -906,14 +646,10 @@
 				&#10094;
 			</button>
 
-			<!-- MAIN VIEWER PHOTO -->
-
 			<img
 				id="viewer-image"
 				src=""
 				alt="">
-
-			<!-- NEXT -->
 
 			<button
 				class="viewer-next"
@@ -922,10 +658,6 @@
 				&#10095;
 			</button>
 
-			<!-- =================================================
-			ZOOM CONTROLS
-			================================================= -->
-
 			<div class="zoom-controls">
 
 				<button
@@ -933,29 +665,38 @@
 					title="Zoom out">
 					−
 				</button>
+
 				<button
 					onclick="resetZoom()"
 					title="Reset zoom">
 					Reset
 				</button>
+
 				<button
 					onclick="zoomIn()"
 					title="Zoom in">
 					+
 				</button>
+
 			</div>
+
 		</div>
+
 	</div>
+
 
 	<!-- =========================================================
 	FOOTER
 	========================================================= -->
 
 	<footer>
+
 		<p style="font-size: 10px;">
 			Created by TTD
 		</p>
+
 	</footer>
+
 
 	<!-- =========================================================
 	JAVASCRIPT
@@ -978,9 +719,14 @@
 
 			});
 
-			document
-				.getElementById(pageId)
-				.classList.add("active");
+			const selectedPage =
+				document.getElementById(pageId);
+
+			if (selectedPage) {
+
+				selectedPage.classList.add("active");
+
+			}
 
 			const buttons =
 				document.querySelectorAll(".nav-button");
@@ -1007,243 +753,327 @@
 
 		}
 
+
 		/* =========================================================
 		PHOTO VIEWER VARIABLES
 		========================================================= */
 
 		let currentAlbum = null;
+
 		let currentPhotoIndex = 0;
+
 		let zoomLevel = 1;
 
-		/* =========================================================
-		CREATE ALBUM THUMBNAILS
-		========================================================= */
-
-		function createAlbumThumbnails() {
-			const albums =
-				document.querySelectorAll(".album");
-			albums.forEach(function(album) {
-				const thumbnailContainer =
-					album.querySelector(".album-thumbnails");
-				const photos =
-					album.querySelectorAll(".album-photo img");
-				photos.forEach(function(photo, index) {
-					const thumbnail =
-						document.createElement("div");
-					thumbnail.className =
-						"album-thumbnail";
-					if (index === 0) {
-						thumbnail.classList.add("active");
-					}
-					const thumbnailImage =
-						document.createElement("img");
-					thumbnailImage.src =
-						photo.src;
-					thumbnailImage.alt =
-						photo.alt;
-					thumbnail.appendChild(
-						thumbnailImage
-					);
-					thumbnail.onclick =
-						function() {
-							currentAlbum = album;
-							currentPhotoIndex = index;
-							openViewer();
-						};
-					thumbnailContainer.appendChild(
-						thumbnail
-					);
-				});
-			});
-		}
 
 		/* =========================================================
 		OPEN ALBUM
 		========================================================= */
 
 		function openAlbum(album) {
+
 			currentAlbum = album;
+
 			currentPhotoIndex = 0;
+
 			openViewer();
+
 		}
+
 
 		/* =========================================================
 		OPEN VIEWER
 		========================================================= */
 
 		function openViewer() {
+
 			if (!currentAlbum) {
+
 				return;
+
 			}
+
 			const viewer =
 				document.getElementById("photo-viewer");
+
 			viewer.classList.add("active");
+
 			document.body.style.overflow =
 				"hidden";
+
 			showPhoto();
+
 		}
+
 
 		/* =========================================================
 		SHOW PHOTO
 		========================================================= */
 
 		function showPhoto() {
+
 			if (!currentAlbum) {
+
 				return;
+
 			}
+
 			const photos =
 				currentAlbum.querySelectorAll(
 					".album-photo img"
 				);
+
 			if (photos.length === 0) {
+
 				return;
+
 			}
+
+			if (currentPhotoIndex >= photos.length) {
+
+				currentPhotoIndex = 0;
+
+			}
+
+			if (currentPhotoIndex < 0) {
+
+				currentPhotoIndex =
+					photos.length - 1;
+
+			}
+
 			const image =
 				document.getElementById(
 					"viewer-image"
 				);
+
 			image.src =
 				photos[currentPhotoIndex].src;
+
 			image.alt =
 				photos[currentPhotoIndex].alt;
+
 			zoomLevel = 1;
+
 			image.style.transform =
 				"scale(1)";
+
 			document
 				.getElementById("viewer-counter")
 				.textContent =
 				(currentPhotoIndex + 1)
 				+ " / "
 				+ photos.length;
+
 			updateActiveThumbnail();
+
 		}
+
 
 		/* =========================================================
 		UPDATE ACTIVE THUMBNAIL
 		========================================================= */
 
 		function updateActiveThumbnail() {
+
 			if (!currentAlbum) {
+
 				return;
+
 			}
+
 			const thumbnails =
 				currentAlbum.querySelectorAll(
 					".album-thumbnail"
 				);
+
 			thumbnails.forEach(function(
 				thumbnail,
 				index
 			) {
+
 				thumbnail.classList.remove(
 					"active"
 				);
+
 				if (
 					index ===
 					currentPhotoIndex
 				) {
+
 					thumbnail.classList.add(
 						"active"
 					);
+
 				}
+
 			});
+
 		}
+
 
 		/* =========================================================
 		NEXT PHOTO
 		========================================================= */
 
 		function nextPhoto() {
+
 			if (!currentAlbum) {
+
 				return;
+
 			}
+
 			const photos =
 				currentAlbum.querySelectorAll(
 					".album-photo img"
 				);
+
+			if (photos.length === 0) {
+
+				return;
+
+			}
+
 			currentPhotoIndex++;
+
 			if (
 				currentPhotoIndex >=
 				photos.length
 			) {
+
 				currentPhotoIndex = 0;
+
 			}
+
 			showPhoto();
+
 		}
+
 
 		/* =========================================================
 		PREVIOUS PHOTO
 		========================================================= */
 
 		function previousPhoto() {
+
 			if (!currentAlbum) {
+
 				return;
+
 			}
+
 			const photos =
 				currentAlbum.querySelectorAll(
 					".album-photo img"
 				);
+
+			if (photos.length === 0) {
+
+				return;
+
+			}
+
 			currentPhotoIndex--;
+
 			if (currentPhotoIndex < 0) {
+
 				currentPhotoIndex =
 					photos.length - 1;
+
 			}
+
 			showPhoto();
+
 		}
+
 
 		/* =========================================================
 		ZOOM IN
 		========================================================= */
 
 		function zoomIn() {
+
 			zoomLevel += 0.25;
+
 			if (zoomLevel > 4) {
+
 				zoomLevel = 4;
+
 			}
+
 			document
 				.getElementById("viewer-image")
 				.style.transform =
-				"scale(" + zoomLevel + ")";
+				"scale("
+				+
+				zoomLevel
+				+
+				")";
+
 		}
+
 
 		/* =========================================================
 		ZOOM OUT
 		========================================================= */
 
 		function zoomOut() {
+
 			zoomLevel -= 0.25;
+
 			if (zoomLevel < 0.5) {
+
 				zoomLevel = 0.5;
+
 			}
+
 			document
 				.getElementById("viewer-image")
 				.style.transform =
-				"scale(" + zoomLevel + ")";
+				"scale("
+				+
+				zoomLevel
+				+
+				")";
+
 		}
+
 
 		/* =========================================================
 		RESET ZOOM
 		========================================================= */
 
 		function resetZoom() {
+
 			zoomLevel = 1;
+
 			document
 				.getElementById("viewer-image")
 				.style.transform =
 				"scale(1)";
+
 		}
+
 
 		/* =========================================================
 		CLOSE VIEWER
 		========================================================= */
 
 		function closeViewer() {
+
 			document
 				.getElementById("photo-viewer")
-				.classList.remove("active");
+				.classList.remove(
+					"active"
+				);
+
 			document.body.style.overflow =
 				"";
+
 			currentAlbum = null;
+
 		}
+
 
 		/* =========================================================
 		KEYBOARD CONTROLS
@@ -1252,40 +1082,65 @@
 		document.addEventListener(
 			"keydown",
 			function(event) {
+
 				const viewer =
 					document.getElementById(
 						"photo-viewer"
 					);
+
 				if (
 					!viewer.classList.contains(
 						"active"
 					)
 				) {
+
 					return;
+
 				}
+
 				if (event.key === "Escape") {
+
 					closeViewer();
+
 				}
+
 				if (event.key === "ArrowRight") {
+
 					nextPhoto();
+
 				}
+
 				if (event.key === "ArrowLeft") {
+
 					previousPhoto();
+
 				}
+
 				if (
-					event.key === "+" ||
+					event.key === "+"
+					||
 					event.key === "="
 				) {
+
 					zoomIn();
+
 				}
+
 				if (event.key === "-") {
+
 					zoomOut();
+
 				}
+
 				if (event.key === "0") {
+
 					resetZoom();
+
 				}
+
 			}
 		);
+
 
 		/* =========================================================
 		MOUSE WHEEL ZOOM
@@ -1296,78 +1151,619 @@
 			.addEventListener(
 				"wheel",
 				function(event) {
+
 					event.preventDefault();
+
 					if (event.deltaY < 0) {
+
 						zoomIn();
+
 					}
 					else {
+
 						zoomOut();
+
 					}
+
 				}
 			);
 
-		/* =========================================================
-		CREATE THUMBNAILS WHEN PAGE LOADS
-		========================================================= */
-
-		createAlbumThumbnails();
 
 		/* =========================================================
-		HIDE EMPTY GALLERY
+		CREATE ALBUM HTML
 		========================================================= */
 
-		const gallery =
-			document.getElementById(
-				"gallery-container"
+		function createAlbum(albumData, type) {
+
+			if (
+				!albumData
+				||
+				!albumData.photos
+				||
+				albumData.photos.length === 0
+			) {
+
+				return null;
+
+			}
+
+			const album =
+				document.createElement("div");
+
+			album.className =
+				"album";
+
+
+			/* PHOTO AREA */
+
+			const photoArea =
+				document.createElement("div");
+
+			photoArea.className =
+				"album-photo-area";
+
+
+			/* MAIN PHOTO */
+
+			const mainPhoto =
+				document.createElement("div");
+
+			mainPhoto.className =
+				"album-main-photo";
+
+			mainPhoto.onclick =
+				function() {
+
+					openAlbum(album);
+
+				};
+
+
+			const mainImage =
+				document.createElement("img");
+
+			mainImage.src =
+				albumData.photos[0].src;
+
+			mainImage.alt =
+				albumData.photos[0].alt
+				||
+				albumData.title
+				||
+				"Photo";
+
+			mainPhoto.appendChild(
+				mainImage
 			);
-		if (gallery.children.length === 0) {
-			document
-				.querySelector(
-					'button[onclick*="gallery"]'
-				)
-				.style.display = "none";
-			document
-				.getElementById("gallery")
-				.style.display = "none";
-		}
 
-		/* =========================================================
-		HIDE EMPTY FOR SALE
-		========================================================= */
 
-		const saleContainer =
-			document.getElementById(
-				"sale-container"
+			/* THUMBNAILS */
+
+			const thumbnails =
+				document.createElement("div");
+
+			thumbnails.className =
+				"album-thumbnails";
+
+
+			/* HIDDEN PHOTO DATA */
+
+			const hiddenPhotos =
+				document.createElement("div");
+
+			hiddenPhotos.style.display =
+				"none";
+
+
+			albumData.photos.forEach(
+				function(photo, index) {
+
+					const hiddenPhoto =
+						document.createElement("div");
+
+					hiddenPhoto.className =
+						"album-photo";
+
+
+					const hiddenImage =
+						document.createElement("img");
+
+					hiddenImage.src =
+						photo.src;
+
+					hiddenImage.alt =
+						photo.alt
+						||
+						albumData.title
+						||
+						"Photo";
+
+					hiddenPhoto.appendChild(
+						hiddenImage
+					);
+
+					hiddenPhotos.appendChild(
+						hiddenPhoto
+					);
+
+
+					/* THUMBNAIL */
+
+					const thumbnail =
+						document.createElement("div");
+
+					thumbnail.className =
+						"album-thumbnail";
+
+					if (index === 0) {
+
+						thumbnail.classList.add(
+							"active"
+						);
+
+					}
+
+
+					const thumbnailImage =
+						document.createElement("img");
+
+					thumbnailImage.src =
+						photo.src;
+
+					thumbnailImage.alt =
+						photo.alt
+						||
+						albumData.title
+						||
+						"Photo";
+
+					thumbnail.appendChild(
+						thumbnailImage
+					);
+
+
+					thumbnail.onclick =
+						function() {
+
+							currentAlbum =
+								album;
+
+							currentPhotoIndex =
+								index;
+
+							openViewer();
+
+						};
+
+
+					thumbnails.appendChild(
+						thumbnail
+					);
+
+				}
 			);
-		if (
-			saleContainer.children.length === 0
-		) {
-			document
-				.querySelector(
-					'button[onclick*="forsale"]'
-				)
-				.style.display = "none";
-			document
-				.getElementById("forsale")
-				.style.display = "none";
+
+
+			photoArea.appendChild(
+				mainPhoto
+			);
+
+			photoArea.appendChild(
+				thumbnails
+			);
+
+			photoArea.appendChild(
+				hiddenPhotos
+			);
+
+
+			/* INFORMATION */
+
+			const info =
+				document.createElement("div");
+
+			info.className =
+				"album-info";
+
+
+			const title =
+				document.createElement("h3");
+
+			title.textContent =
+				albumData.title
+				||
+				"Untitled";
+
+			info.appendChild(
+				title
+			);
+
+
+			if (albumData.description) {
+
+				const description =
+					document.createElement("p");
+
+				description.textContent =
+					albumData.description;
+
+				info.appendChild(
+					description
+				);
+
+			}
+
+
+			/* FOR SALE INFORMATION */
+
+			if (type === "forsale") {
+
+				if (albumData.price) {
+
+					const price =
+						document.createElement("p");
+
+					price.className =
+						"sale-price";
+
+					price.textContent =
+						albumData.price;
+
+					info.appendChild(
+						price
+					);
+
+				}
+
+
+				if (
+					albumData.contactName
+					||
+					albumData.phone
+				) {
+
+					const contact =
+						document.createElement("p");
+
+					const strong =
+						document.createElement("strong");
+
+					strong.textContent =
+						"Contact"
+						+
+						(
+							albumData.contactName
+							?
+							": "
+							+
+							albumData.contactName
+							:
+							":"
+						);
+
+					contact.appendChild(
+						strong
+					);
+
+
+					if (albumData.phone) {
+
+						contact.appendChild(
+							document.createElement("br")
+						);
+
+
+						const phoneLink =
+							document.createElement("a");
+
+						phoneLink.href =
+							"tel:"
+							+
+							albumData.phone.replace(
+								/[^0-9+]/g,
+								""
+							);
+
+						phoneLink.textContent =
+							albumData.phone;
+
+						contact.appendChild(
+							phoneLink
+						);
+
+					}
+
+
+					info.appendChild(
+						contact
+					);
+
+				}
+
+			}
+
+
+			album.appendChild(
+				photoArea
+			);
+
+			album.appendChild(
+				info
+			);
+
+
+			return album;
+
 		}
+
 
 		/* =========================================================
-		HIDE ENTIRE NAV IF ONLY HOME REMAINS
+		LOAD GALLERY
 		========================================================= */
 
-		const galleryHasItems =
-			gallery.children.length > 0;
-		const saleHasItems =
-			saleContainer.children.length > 0;
-		if (
-			!galleryHasItems &&
-			!saleHasItems
-		) {
-			document
-				.querySelector("nav")
-				.style.display = "none";
+		async function loadGallery() {
+
+			try {
+
+				const response =
+					await fetch(
+						"data/gallery.json",
+						{
+							cache: "no-cache"
+						}
+					);
+
+				if (!response.ok) {
+
+					throw new Error(
+						"Could not load gallery.json"
+					);
+
+				}
+
+				const data =
+					await response.json();
+
+				const container =
+					document.getElementById(
+						"gallery-container"
+					);
+
+				container.innerHTML = "";
+
+
+				const albums =
+					Array.isArray(data.albums)
+					?
+					data.albums
+					:
+					[];
+
+
+				albums.forEach(
+					function(albumData) {
+
+						const album =
+							createAlbum(
+								albumData,
+								"gallery"
+							);
+
+						if (album) {
+
+							container.appendChild(
+								album
+							);
+
+						}
+
+					}
+				);
+
+
+				updateNavigationVisibility();
+
+			}
+			catch (error) {
+
+				console.error(
+					"Gallery loading error:",
+					error
+				);
+
+				updateNavigationVisibility();
+
+			}
+
 		}
+
+
+		/* =========================================================
+		LOAD FOR SALE
+		========================================================= */
+
+		async function loadForSale() {
+
+			try {
+
+				const response =
+					await fetch(
+						"data/forsale.json",
+						{
+							cache: "no-cache"
+						}
+					);
+
+				if (!response.ok) {
+
+					throw new Error(
+						"Could not load forsale.json"
+					);
+
+				}
+
+				const data =
+					await response.json();
+
+				const container =
+					document.getElementById(
+						"sale-container"
+					);
+
+				container.innerHTML = "";
+
+
+				const listings =
+					Array.isArray(data.listings)
+					?
+					data.listings
+					:
+					[];
+
+
+				listings.forEach(
+					function(listingData) {
+
+						const listing =
+							createAlbum(
+								listingData,
+								"forsale"
+							);
+
+						if (listing) {
+
+							container.appendChild(
+								listing
+							);
+
+						}
+
+					}
+				);
+
+
+				updateNavigationVisibility();
+
+			}
+			catch (error) {
+
+				console.error(
+					"For Sale loading error:",
+					error
+				);
+
+				updateNavigationVisibility();
+
+			}
+
+		}
+
+
+		/* =========================================================
+		SHOW/HIDE NAVIGATION
+		========================================================= */
+
+		function updateNavigationVisibility() {
+
+			const galleryContainer =
+				document.getElementById(
+					"gallery-container"
+				);
+
+			const saleContainer =
+				document.getElementById(
+					"sale-container"
+				);
+
+
+			const galleryHasItems =
+				galleryContainer.children.length > 0;
+
+			const saleHasItems =
+				saleContainer.children.length > 0;
+
+
+			const galleryNav =
+				document.getElementById(
+					"gallery-nav"
+				);
+
+			const saleNav =
+				document.getElementById(
+					"forsale-nav"
+				);
+
+
+			const galleryPage =
+				document.getElementById(
+					"gallery"
+				);
+
+			const salePage =
+				document.getElementById(
+					"forsale"
+				);
+
+
+			if (galleryHasItems) {
+
+				galleryNav.style.display =
+					"";
+
+				galleryPage.style.display =
+					"";
+
+			}
+			else {
+
+				galleryNav.style.display =
+					"none";
+
+				galleryPage.classList.remove(
+					"active"
+				);
+
+				galleryPage.style.display =
+					"none";
+
+			}
+
+
+			if (saleHasItems) {
+
+				saleNav.style.display =
+					"";
+
+				salePage.style.display =
+					"";
+
+			}
+			else {
+
+				saleNav.style.display =
+					"none";
+
+				salePage.classList.remove(
+					"active"
+				);
+
+				salePage.style.display =
+					"none";
+
+			}
+
+		}
+
+
+		/* =========================================================
+		START WEBSITE
+		========================================================= */
+
+		loadGallery();
+
+		loadForSale();
+
 	</script>
+
 </body>
 </html>
