@@ -1666,15 +1666,10 @@
 		function updateNavigationVisibility() {
 
 			const galleryContainer =
-				document.getElementById(
-					"gallery-container"
-				);
+				document.getElementById("gallery-container");
 
 			const saleContainer =
-				document.getElementById(
-					"sale-container"
-				);
-
+				document.getElementById("sale-container");
 
 			const galleryHasItems =
 				galleryContainer.children.length > 0;
@@ -1682,78 +1677,81 @@
 			const saleHasItems =
 				saleContainer.children.length > 0;
 
-
 			const galleryNav =
-				document.getElementById(
-					"gallery-nav"
-				);
+				document.getElementById("gallery-nav");
 
 			const saleNav =
-				document.getElementById(
-					"forsale-nav"
-				);
-
+				document.getElementById("forsale-nav");
 
 			const galleryPage =
-				document.getElementById(
-					"gallery"
-				);
+				document.getElementById("gallery");
 
 			const salePage =
-				document.getElementById(
-					"forsale"
-				);
+				document.getElementById("forsale");
 
+			const navigation =
+				document.getElementById("main-navigation");
+
+			/* =========================================================
+				HIDE/SHOW GALLERY
+			========================================================= */
 
 			if (galleryHasItems) {
 
-				galleryNav.style.display =
-					"";
+				galleryNav.style.display = "";
 
-				galleryPage.style.display =
-					"";
+				galleryPage.style.display = "";
 
 			}
 			else {
 
-				galleryNav.style.display =
-					"none";
+				galleryNav.style.display = "none";
 
-				galleryPage.classList.remove(
-					"active"
-				);
+				galleryPage.classList.remove("active");
 
-				galleryPage.style.display =
-					"none";
+				galleryPage.style.display = "none";
 
 			}
 
+
+			/* =========================================================
+				HIDE/SHOW FOR SALE
+			========================================================= */
 
 			if (saleHasItems) {
 
-				saleNav.style.display =
-					"";
+				saleNav.style.display = "";
 
-				salePage.style.display =
-					"";
+				salePage.style.display = "";
 
 			}
 			else {
 
-				saleNav.style.display =
-					"none";
+				saleNav.style.display = "none";
 
-				salePage.classList.remove(
-					"active"
-				);
+				salePage.classList.remove("active");
 
-				salePage.style.display =
-					"none";
+				salePage.style.display = "none";
+
+			}
+
+
+			/* =========================================================
+				HIDE ENTIRE NAVIGATION WHEN BOTH ARE EMPTY
+			========================================================= */
+
+			if (!galleryHasItems && !saleHasItems) {
+
+				navigation.style.display = "none";
+
+			}
+			else {
+
+				navigation.style.display = "";
 
 			}
 
 		}
-
 
 		/* =========================================================
 		START WEBSITE
