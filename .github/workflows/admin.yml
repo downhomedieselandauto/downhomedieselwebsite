@@ -1,0 +1,37 @@
+name: Down Home Diesel Admin
+
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: "Administrative action"
+        required: true
+        type: choice
+        options:
+          - test
+      message:
+        description: "Test message"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  admin:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Verify repository
+        run: |
+          if [ "${{ github.repository }}" != "downhomedieselandauto/downhomedieselwebsite" ]; then
+            echo "Unexpected repository."
+            exit 1
+          fi
+
+      - name: Test secure GitHub access
+        run: |
+          echo "Down Home Diesel admin workflow is working."
+          echo "Repository: ${{ github.repository }}"
+          echo "Action: ${{ inputs.action }}"
+          echo "Message received successfully."
