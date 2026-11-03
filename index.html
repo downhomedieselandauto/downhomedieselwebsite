@@ -12,10 +12,10 @@
           padding: 0;
         }
         body {
-          font-family: Arial, Helvetica, sans-serif;
+          font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
           background: url("background-img.png") center / cover fixed no-repeat;
           color: #222;
-          line-height: 1.6;
+          line-height: 1.5;
         }
         header,
         footer {
@@ -32,29 +32,44 @@
           margin: 0 auto;
         }
         main {
-          max-width: 700px;
+          max-width: 720px;
           margin: 35px auto;
           padding: 0 25px;
         }
         .contact-box {
           background: rgba(255, 255, 255, 0.94);
-          box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
-          padding: 30px 18px;
+          box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+          border-radius: 12px;
+          padding: 26px 22px;
         }
         .contact-box h1 {
-          font-size: 32px;
-          margin-bottom: 12px;
-          border-bottom: 3px solid #c40000;
+          font-size: 30px;
+          font-weight: 700;
+          letter-spacing: -0.03em;
+          margin-bottom: 14px;
+          border-bottom: 2px solid #c40000;
           padding-bottom: 8px;
+          color: #1d1d1d;
         }
         .contact-box p {
-          margin: 14px 0;
+          margin: 12px 0;
+          font-size: 16px;
+          color: #2c2c2c;
+          line-height: 1.5;
+        }
+        .contact-box .intro {
           font-size: 17px;
+          color: #3d3d3d;
+          margin-bottom: 18px;
         }
         .contact-box a {
           color: #c40000;
-          font-weight: bold;
+          font-weight: 700;
+          text-decoration: none;
           overflow-wrap: anywhere;
+        }
+        .contact-box a:hover {
+          text-decoration: underline;
         }
         .facebook-link {
           display: inline-block;
@@ -79,6 +94,7 @@
           }
           .contact-box {
             padding: 22px 12px;
+            border-radius: 10px;
           }
           .contact-box h1 {
             font-size: 27px;
@@ -96,7 +112,7 @@
     <main>
       <section class="contact-box">
         <h1>Contact Us</h1>
-        <p>Give us a call or stop by for more information about our diesel and automotive services.</p>
+        <p class="intro">Give us a call or stop by for more information about our diesel and automotive services.</p>
         <p><strong>Owner: Michael Servoss</strong></p>
         <p>
           <strong>Address:</strong><br>
